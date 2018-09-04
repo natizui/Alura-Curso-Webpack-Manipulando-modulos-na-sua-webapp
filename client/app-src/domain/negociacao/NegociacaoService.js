@@ -43,7 +43,7 @@ export class NegociacaoService {
     obtemNegociacoesDaSemanaRetrasada() {
 
         return this._http
-            .get('negociacoes/retrasada')
+            .get(`${SERVICE_URL}/negociacoes/retrasada`)
             .then(
             dados => dados.map(objeto =>
                 new Negociacao(new Date(objeto.data), objeto.quantidade, objeto.valor))
